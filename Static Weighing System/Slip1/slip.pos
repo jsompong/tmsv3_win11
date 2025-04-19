@@ -1,0 +1,69 @@
+﻿; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+; script for send command to printer direct via device
+; \t = tab เลื่อนเคอร์เซอร์ไปด้านซ้าย 5 ตัวอักษร
+; \c = charactor space เลื่อนเคอร์เซอร์ำปด้านซ้าย 1 ตัวอักษร
+; \r = เลือนเคอร์เซอร์ไปตำแหน่งเริ่มต้นด้านซ้าย
+; \n = เลื่อนเคอร์เซอร์ขึ้นบรรทัดใหม่
+; %gross = gross weight
+; %tare = tare weight
+; %net = net weight
+; %date = date
+; %time = time
+; %month = mouth
+; %year = year
+; %ow = owner name
+; %oa = owner address
+; %ot = owner telephone
+; %of = owner fax
+; %cc = customer code
+; %cn = customer name
+; %dc = driver code
+; %dn = driver name
+; %gc = goods code
+; %gn = goods name
+; %nt = note
+; %inid = ws_internal_id  เลขที่ใบชั่ง
+; %exid = ws_external_id  เลขที่อ้าฃอิง
+; %truck_id = truck_id  ทะเบียนหัว
+; %trailer_id = trailer_id  ทะเบียนหาง
+; \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+;
+;print goods name or product name
+\n
+\n
+\n
+\n
+\t%gn
+\n
+\n
+\t\t%gross\n
+\n
+\n
+\n
+\n
+;print text
+Before fill \t%tare\t%date_in%time_in\n
+Driver code \t%dc\c\c%dn\n
+Site Name \tRAYONG\n
+\n
+\n
+\n
+\n
+After fill \t%gross\t%date_ou%time_ou\n
+Driver code \t%dc\c\c%dn\n
+Site Name \tRAYONG\n
+\n
+\n
+\n
+%exid\c\c%truck_id\c\c%trailer_id%gc\n
+\n
+%truck_id
+\n
+\n
+\n
+Summary\t\t%net
+\n
+\n
+\n
+\n
+;end
